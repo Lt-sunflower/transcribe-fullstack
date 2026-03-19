@@ -1,0 +1,13 @@
+name: backend
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ..:/app
+    environment:
+      - DATABASE_URL=sqlite:///./db/docker.db
